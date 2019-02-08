@@ -6,10 +6,7 @@ public class Main {
         int len = 10;
         ArrayList<Integer> array = new ArrayList<>();
         Random random = new Random();
-        for (int i = 0; i<len; i++) {
-            array.add(random.nextInt(len));
-        }
-
+        for (int i = 0; i<len;)
 
         //Insertion Sort
         System.out.println("INSERTION SORT");
