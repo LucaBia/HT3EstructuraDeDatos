@@ -42,4 +42,13 @@ public class Quick {
         array.set(i, array.get(j));
         array.set(j, temp);
     }
+
+    // A utility function to print an array
+    static void print(ArrayList<Integer> arrayInput) {
+        int n = arrayInput.size();
+
+        for (int i = 0; i<n; i++) {
+            System.out.println(arrayInput.get(i));
+        }
+    }
 }

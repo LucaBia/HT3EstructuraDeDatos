@@ -16,4 +16,13 @@ public class Insertion {
 
         return array;
     }
+
+    // A utility function to print an array
+    static void print(ArrayList<Integer> arrayInput) {
+        int n = arrayInput.size();
+
+        for (int i = 0; i<n; i++) {
+            System.out.println(arrayInput.get(i));
+        }
+    }
 }
