@@ -1,14 +1,12 @@
-import java.util.ArrayList;
-
 public class Merge {
-    private static ArrayList<Integer> array;
-    private static int[] tempMergArr;
+    private static Comparable[] array;
+    private static Comparable[] tempMergArr;
     private static int length;
 
-    static void sort(ArrayList<Integer> arrayInput) {
+    static void sort(Comparable[] arrayInput) {
         array = arrayInput;
-        length = arrayInput.size();
-        tempMergArr = new int[length];
+        length = arrayInput.length;
+        tempMergArr = new Comparable[length];
         doMergeSort(0, length - 1);
     }
 
@@ -28,23 +26,23 @@ public class Merge {
     private static void mergeParts(int lowerIndex, int middle, int higherIndex) {
 
         for (int i = lowerIndex; i <= higherIndex; i++) {
-            tempMergArr[i] = array.get(i);
+            tempMergArr[i] = array[i];
         }
         int i = lowerIndex;
         int j = middle + 1;
         int k = lowerIndex;
         while (i <= middle && j <= higherIndex) {
-            if (tempMergArr[i] <= tempMergArr[j]) {
-                array.set(k, tempMergArr[i]);
+            if (tempMergArr[i].compareTo(tempMergArr[j]) <= 0) {
+                array[k] = tempMergArr[i];
                 i++;
             } else {
-                array.set(k, tempMergArr[j]);
+                array[k] = tempMergArr[j];
                 j++;
             }
             k++;
         }
         while (i <= middle) {
-            array.set(k, tempMergArr[i]);
+            array[k] = tempMergArr[i];
             k++;
             i++;
         }
@@ -52,8 +50,8 @@ public class Merge {
     }
 
     // A utility function to print an array
-    static void print(ArrayList<Integer> arrayInput) {
-        for (Integer anArrayInput : arrayInput) {
+    static void print(Comparable[] arrayInput) {
+        for (Comparable anArrayInput : arrayInput) {
             System.out.println(anArrayInput);
         }
     }

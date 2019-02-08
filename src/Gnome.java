@@ -1,14 +1,12 @@
-import java.util.ArrayList;
-
 public class Gnome {
-    static void gnomeSort(ArrayList<Integer> arrayInput) {
-        for ( int index = 1; index < arrayInput.size(); ) {
-            if ( arrayInput.get(index - 1) <= arrayInput.get(index)) {
+    static void gnomeSort(Comparable[] arrayInput) {
+        for ( int index = 1; index < arrayInput.length; ) {
+            if ( arrayInput[index - 1].compareTo(arrayInput[index]) <= 0) {
                 ++index;
             } else {
-                int tempVal = arrayInput.get(index);
-                arrayInput.set(index, arrayInput.get(index - 1));
-                arrayInput.set(index - 1, tempVal);
+                Comparable tempVal = arrayInput[index];
+                arrayInput[index] = arrayInput[index - 1];
+                arrayInput[index -1] = tempVal;
                 --index;
                 if ( index == 0 ) {
                     index = 1;
@@ -18,8 +16,8 @@ public class Gnome {
     }
 
     // A utility function to print an array
-    static void print(ArrayList<Integer> arrayInput) {
-        for (Integer anArrayInput : arrayInput) {
+    static void print(Comparable[] arrayInput) {
+        for (Comparable anArrayInput : arrayInput) {
             System.out.println(anArrayInput);
         }
     }

@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-
 public class Quick {
-    private static ArrayList<Integer> array;
+    private static Comparable[] array;
 
-    static void sort(ArrayList<Integer> arrayInput) {
+    static void sort(Comparable[] arrayInput) {
         array = arrayInput;
-        int len = arrayInput.size();
-        quickSort(0, len-1);
+        int len = arrayInput.length;
+        quickSort(0, len - 1);
     }
 
     private static void quickSort(int lowerIndex, int higherIndex) {
@@ -14,13 +12,13 @@ public class Quick {
         int i = lowerIndex;
         int j = higherIndex;
         // calculate pivot number, I am taking pivot as middle index number
-        int pivot = array.get(lowerIndex + (higherIndex - lowerIndex) / 2);
+        Comparable pivot = array[lowerIndex + (higherIndex - lowerIndex) / 2];
         // Divide into two arrays
         while (i <= j) {
-            while (array.get(i) < pivot) {
+            while (array[i].compareTo(pivot) < 0) {
                 i++;
             }
-            while (array.get(j) > pivot) {
+            while (array[j].compareTo(pivot) > 0) {
                 j--;
             }
             if (i <= j) {
@@ -31,21 +29,23 @@ public class Quick {
             }
         }
         // call quickSort() method recursively
-        if (lowerIndex < j)
+        if (lowerIndex < j) {
             quickSort(lowerIndex, j);
-        if (i < higherIndex)
+        }
+        if (i < higherIndex) {
             quickSort(i, higherIndex);
+        }
     }
 
     private static void exchangeNumbers(int i, int j) {
-        int temp = array.get(i);
-        array.set(i, array.get(j));
-        array.set(j, temp);
+        Comparable temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 
     // A utility function to print an array
-    static void print(ArrayList<Integer> arrayInput) {
-        for (Integer anArrayInput : arrayInput) {
+    static void print(Comparable[] arrayInput) {
+        for (Comparable anArrayInput : arrayInput) {
             System.out.println(anArrayInput);
         }
     }
