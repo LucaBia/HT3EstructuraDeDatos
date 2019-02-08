@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Radix {
     // A utility function to get maximum value in arr[]
-    static int getMax(ArrayList<Integer> arrayInput, int n) {
+    private static int getMax(ArrayList<Integer> arrayInput, int n) {
         int mx = arrayInput.get(0);
         for (int i = 1; i < n; i++) {
             if (arrayInput.get(i) > mx)
@@ -13,7 +13,7 @@ public class Radix {
 
     // A function to do counting sort of arr[] according to
     // the digit represented by exp.
-    static void countSort(ArrayList<Integer> arrayInput, int n, int exp) {
+    private static void countSort(ArrayList<Integer> arrayInput, int n, int exp) {
         int output[] = new int[n]; // output array
         int i;
         int count[] = new int[10];
@@ -60,10 +60,8 @@ public class Radix {
 
     // A utility function to print an array
     static void print(ArrayList<Integer> arrayInput) {
-        int n = arrayInput.size();
-
-        for (int i = 0; i<n; i++) {
-            System.out.println(arrayInput.get(i));
+        for (Integer anArrayInput : arrayInput) {
+            System.out.println(anArrayInput);
         }
     }
 

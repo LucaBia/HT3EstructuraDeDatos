@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Quick {
     private static ArrayList<Integer> array;
 
-    public static void sort(ArrayList<Integer> arrayInput) {
+    static void sort(ArrayList<Integer> arrayInput) {
         array = arrayInput;
         int len = arrayInput.size();
         quickSort(0, len-1);
@@ -45,10 +45,8 @@ public class Quick {
 
     // A utility function to print an array
     static void print(ArrayList<Integer> arrayInput) {
-        int n = arrayInput.size();
-
-        for (int i = 0; i<n; i++) {
-            System.out.println(arrayInput.get(i));
+        for (Integer anArrayInput : arrayInput) {
+            System.out.println(anArrayInput);
         }
     }
 }

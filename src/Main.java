@@ -33,5 +33,10 @@ public class Main {
         System.out.println("RADIX SORT");
         Radix.radixsort(array);
         Radix.print(array);
+
+        //Gnome Sort
+        System.out.println("GNOME SORT");
+        Gnome.gnomeSort(array);
+        Gnome.print(array);
     }
 }

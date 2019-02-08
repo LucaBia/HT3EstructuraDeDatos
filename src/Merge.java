@@ -5,7 +5,7 @@ public class Merge {
     private static int[] tempMergArr;
     private static int length;
 
-    public static void sort(ArrayList<Integer> arrayInput) {
+    static void sort(ArrayList<Integer> arrayInput) {
         array = arrayInput;
         length = arrayInput.size();
         tempMergArr = new int[length];
@@ -53,10 +53,8 @@ public class Merge {
 
     // A utility function to print an array
     static void print(ArrayList<Integer> arrayInput) {
-        int n = arrayInput.size();
-
-        for (int i = 0; i<n; i++) {
-            System.out.println(arrayInput.get(i));
+        for (Integer anArrayInput : arrayInput) {
+            System.out.println(anArrayInput);
         }
     }
 }
