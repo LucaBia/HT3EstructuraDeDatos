@@ -17,25 +17,26 @@ public class Main {
         //Insertion Sort
         System.out.println("INSERTION SORT");
         Insertion.insertionSort(array);
-        for (int i = 0; i<len; i++) {
-            System.out.println(array.get(i));
-        }
-
+        Insertion.print(array);
 
         //Quick Sort
         System.out.println("QUICK SORT");
         Quick.sort(array);
-        for (int i = 0; i<len; i++) {
-            System.out.println(array.get(i));
-        }
-
+        Quick.print(array);
 
         //Merge Sort
         System.out.println("MERGE SORT");
         Merge.sort(array);
-        for (int i = 0; i<len; i++) {
-            System.out.println(array.get(i));
-        }
+        Merge.print(array);
 
+        //Radix Sort
+        System.out.println("RADIX SORT");
+        Radix.radixsort(array);
+        Radix.print(array);
+
+        //Gnome Sort
+        System.out.println("GNOME SORT");
+        Gnome.gnomeSort(array);
+        Gnome.print(array);
     }
 }

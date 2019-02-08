@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Insertion {
 
-    public static ArrayList insertionSort(ArrayList<Integer> array) {
+    static void insertionSort(ArrayList<Integer> array) {
         int t;
         for (int i = 1; i < array.size(); i++) {
             for (int j = i; j > 0; j--) {
@@ -13,7 +13,12 @@ public class Insertion {
                 }
             }
         }
+    }
 
-        return array;
+    // A utility function to print an array
+    static void print(ArrayList<Integer> arrayInput) {
+        for (Integer anArrayInput : arrayInput) {
+            System.out.println(anArrayInput);
+        }
     }
 }
