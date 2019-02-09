@@ -1,16 +1,22 @@
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
         Random random = new Random();
 
-        int lon = 0;
+        int lon;
         System.out.println("Ingrese la cantidad de números que desea generar: ");
         lon = read.nextInt();
         Comparable[] array = new Comparable[lon];
+        ArrayList<Integer> fileRandomNumbers = new ArrayList<>();
 
         try {
             //Escribe archivo
@@ -24,21 +30,30 @@ public class Main {
                 bw.write("\n");
             }
 
-            //Lee archivo
-            FileReader fr = new FileReader(fileRandom);
-            BufferedReader br = new BufferedReader(fr);
-
-            for (int i = 0; i < lon; i++) {
-                array[i] = br.readLine();
-                System.out.println(br.read());
-            }
-
             bw.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        /*
+        try {
+            //Lee archivo
+            Stream<String> lines = Files.lines(
+                    Paths.get(System.getProperty("user.dir")+"\\files/randomNumbers.txt"),
+                    StandardCharsets.UTF_8
+            );
+            lines.forEach(l -> {
+                fileRandomNumbers.add(Integer.parseInt(l));
+            });
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        for (int i = 0; i < lon; i++) {
+            array[i] = fileRandomNumbers.get(i);
+        }
+
+
         //Insertion Sort
         System.out.println("INSERTION SORT");
         Insertion.insertionSort(array);
