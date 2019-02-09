@@ -22,7 +22,7 @@ public class Radix {
 
         // Store count of occurrences in count[]
         for (i = 0; i < n; i++) {
-            count[ (arr[i]/exp)%10 ]++;
+            count[ ((Integer)arr[i]/exp)%10 ]++;
         }
 
         // Change count[i] so that count[i] now contains
@@ -33,8 +33,8 @@ public class Radix {
 
         // Build the output array
         for (i = n - 1; i >= 0; i--) {
-            output[count[ (arr[i]/exp)%10 ] - 1] = arr[i];
-            count[ (arr[i]/exp)%10 ]--;
+            output[count[ ((Integer)arr[i]/exp)%10 ] - 1] = (Integer)arr[i];
+            count[ ((Integer)arr[i]/exp)%10 ]--;
         }
 
         // Copy the output array to arr[], so that arr[] now
@@ -54,7 +54,7 @@ public class Radix {
         // Do counting sort for every digit. Note that instead
         // of passing digit number, exp is passed. exp is 10^i
         // where i is current digit number
-        for (int exp = 1; m/exp > 0; exp *= 10) {
+        for (int exp = 1; (Integer)m/exp > 0; exp *= 10) {
             countSort(arr, n, exp);
         }
     }
