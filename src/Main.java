@@ -59,21 +59,21 @@ public class Main {
         Insertion.insertionSort(array);
         Insertion.print(array);
 
-        /*
+
         //Quick Sort
-        System.out.println("QUICK SORT");
+       System.out.println("QUICK SORT");
         Quick.sort(array);
         Quick.print(array);
 
 
         //Merge Sort
-        System.out.println("MERGE SORT");
+       System.out.println("MERGE SORT");
         Merge.sort(array);
         Merge.print(array);
 
 
-        //Gnome Sort
-        System.out.println("GNOME SORT");
+       //Gnome Sort
+       System.out.println("GNOME SORT");
         Gnome.gnomeSort(array);
         Gnome.print(array);
 
@@ -82,6 +82,6 @@ public class Main {
         System.out.println("RADIX SORT");
         Radix.radixsort(array);
         Radix.print(array);
-        */
+
     }
 }
