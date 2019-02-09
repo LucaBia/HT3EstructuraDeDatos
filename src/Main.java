@@ -20,7 +20,7 @@ public class Main {
 
         try {
             //Escribe archivo
-            String location = System.getProperty("user.dir")+"/files/randomNumbers.txt";
+            String location = System.getProperty("user.dir")+"/randomNumbers.txt";
             File fileRandom = new File(location);
             FileWriter fw = new FileWriter(fileRandom);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -38,7 +38,7 @@ public class Main {
         try {
             //Lee archivo
             Stream<String> lines = Files.lines(
-                    Paths.get(System.getProperty("user.dir")+"\\files/randomNumbers.txt"),
+                    Paths.get(System.getProperty("user.dir")+"\\randomNumbers.txt"),
                     StandardCharsets.UTF_8
             );
             lines.forEach(l -> {
